@@ -22,6 +22,7 @@ import NotFound from "./NotFound";
 import Seo from "./Seo";
 import { SITE } from "./config/site";
 import { C } from "./theme";
+import { useCanvasColor } from "./useCanvasColor";
 
 // la navigation descend en même temps que la dernière phase du hero
 const NAV_DELAY = HERO_SCHEDULE.phase3;
@@ -79,6 +80,7 @@ function Training() {
 }
 
 export default function App() {
+  useCanvasColor({ top: C.ink, middle: C.surface, bottom: C.accent });
   return (
     // pas d'overflow-hidden sur les parents : cela casserait le position:sticky
     <BrowserRouter>

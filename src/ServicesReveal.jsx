@@ -153,11 +153,11 @@ export default function ServicesReveal({
     <section
       ref={sectionRef}
       aria-labelledby="services-word"
-      style={{ height: `${SECTION_SCREENS * 100}svh` }}
+      style={{ height: `${SECTION_SCREENS * 100}dvh` }}
       className="relative w-full"
     >
       <div
-        style={{ height: "100svh" }}
+        style={{ height: "100dvh" }}
         className="sticky top-0 flex w-full flex-col items-center justify-center overflow-hidden bg-white"
       >
         <h2 id="services-word" className="sr-only">

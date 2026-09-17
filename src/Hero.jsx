@@ -442,7 +442,7 @@ export default function Hero({
         // le hero se glisse SOUS l'en-tête : marge négative de sa hauteur,
         // et on ne retranche plus que la bannière. L'image passe donc
         // derrière la navigation au lieu de commencer en dessous.
-        height: "calc(100svh - var(--banner-height, 0px))",
+        height: "calc(100lvh - var(--banner-height, 0px))",
         marginTop: "calc(-1 * var(--nav-height, 0px))",
         minHeight: 540,
         backgroundColor: C.surface,

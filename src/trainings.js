@@ -30,13 +30,13 @@ export const TRAININGS = [
   {
     slug: "volumes",
     title: "Les volumes",
-    subtitle: "Wispy, wet set, volume russe",
+    subtitle: "Wispy, wet set, volume",
     tagline: "Enrichir ses prestations avec des poses plus intenses, sans perdre en précision.",
     duration: "2 jours",
     image: FORMATION_IMAGESS.find((image) => image.id === "les-volumes").src,
     level: "Perfectionnement",
     audience:
-      "La formation Volume Russe s'adresse à toute personne ayant déjà acquis les bases essentielles de la technique cil à cil classique et souhaitant approfondir ses compétences en apprenant la technique du volume russe. Elle est idéale pour les techniciennes souhaitant enrichir leurs prestations et offrir des poses plus intenses, tout en conservant précision et élégance. Pour celles qui souhaitent revoir ou renforcer les bases du cil à cil, le cours complet cil à cil et les volumes est recommandé.",
+      "La formation Volume s'adresse à toute personne ayant déjà acquis les bases essentielles de la technique cil à cil classique et souhaitant approfondir ses compétences en apprenant la technique du volume. Elle est idéale pour les techniciennes souhaitant enrichir leurs prestations et offrir des poses plus intenses, tout en conservant précision et élégance. Pour celles qui souhaitent revoir ou renforcer les bases du cil à cil, le cours complet cil à cil et les volumes est recommandé.",
     objectives: [
       "Découvrir et maîtriser le matériel spécifique aux volumes",
       "Comprendre la théorie et appliquer la technique des volumes : création de bouquets, isolation, travail des rangées, encollement",
@@ -48,12 +48,12 @@ export const TRAININGS = [
   {
     slug: "cil-a-cil-et-volumes",
     title: "Cours complet cil à cil et les volumes",
-    tagline: "Revoir les fondamentaux et perfectionner la technique du volume russe.",
+    tagline: "Revoir les fondamentaux et perfectionner la technique du volume.",
     duration: "3 jours",
     image: FORMATION_IMAGESS.find((image) => image.id === "livret").src,
     level: "Complet",
     audience:
-      "Cette formation est idéale pour toutes celles qui souhaitent revoir les fondamentaux et perfectionner la technique du volume russe.",
+      "Cette formation est idéale pour toutes celles qui souhaitent revoir les fondamentaux et perfectionner la technique du volume.",
     objectives: [
       "Découverte et maîtrise du matériel dédié aux volumes",
       "Apprentissage de la théorie et de la technique des volumes : création de bouquets, encollement, travail structuré des rangées",
