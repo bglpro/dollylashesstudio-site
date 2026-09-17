@@ -1,0 +1,7 @@
+# https://dollylashesstudio.fr/.well-known/security.txt
+# Où signaler une faille de sécurité sur ce site.
+
+Contact: mailto:contact@dollylashesstudio.fr
+Expires: 2030-01-01T00:00:00.000Z
+Preferred-Languages: fr, en
+Canonical: https://dollylashesstudio.fr/.well-known/security.txt
