@@ -1,0 +1,14 @@
+# DollyLashesStudio
+
+> Studio d'extensions de cils et centre de formation à Meaux (Seine-et-Marne), depuis 2019.
+
+## Prestations
+- [Poses et remplissages](https://dollylashesstudio.fr/#prestations) : cil à cil, mixte, volume, wispy et wet set.
+
+## Formations
+- [Formations pour techniciennes](https://dollylashesstudio.fr/#formations) : débutante, volumes, cours complet, coaching privé, création de contenu.
+
+## Informations
+- [À propos](https://dollylashesstudio.fr/about)
+- [Contact et réservation](https://dollylashesstudio.fr/contact)
+- [Questions fréquentes](https://dollylashesstudio.fr/#faq)

@@ -1,10 +1,6 @@
 # https://dollylashesstudio.fr
 User-agent: *
 Allow: /
-
-# Pages sans intérêt pour la recherche
 Disallow: /merci
-Disallow: /*?
-Allow: /*?utm_
 
 Sitemap: https://dollylashesstudio.fr/sitemap.xml

@@ -11,7 +11,8 @@ import formationCoachingPrive from "./training/formation-coaching-prive-mapping-
 import formationCreationContenu from "./training/formation-creation-contenu-tournage-studio.webp";
 
 // STUDIO
-import carteFidelite from "./carte-fidelite-dolly-lashes-studio.webp";
+import carte800 from "./carte-fidelite-800.webp";
+import carte1600 from "./carte-fidelite-1600.webp";
 import CouvertureEbook from "./couverture-ebook-le-code-des-cils.webp";
 import backstageShooting from "./backstage-shooting-dolly-lashes-studio-paris.webp";
 
@@ -67,8 +68,13 @@ export const FORMATION_IMAGESS = [
 
 export const STUDIO_IMAGES = [
   {
-    id: "fidelite",
-    src: carteFidelite,
+    id: "fidelite800",
+    src: carte800,
+    alt: "Carte de fidélité Dolly Lashes Studio tenue par une main gantée en cabine",
+  },
+  {
+    id: "fidelite1600",
+    src: carte1600,
     alt: "Carte de fidélité Dolly Lashes Studio tenue par une main gantée en cabine",
   },
   {

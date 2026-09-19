@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes, useParams } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import PageTransition from "./PageTransition";
 import SiteNav from "./SiteNav";
 import Hero from "./Hero";
@@ -11,18 +12,19 @@ import SpotlightCarousel from "./SpotlightCarousel";
 import FAQs from "./FAQs";
 import CtaCard from "./CtaCard";
 import Footer from "./Footer";
-import TrainingPage from "./TrainingPage";
 import { findTraining } from "./trainings";
-import AboutPage from "./AboutPage";
-import ContactPage from "./ContactPage";
-import MentionsLegales from "./MentionsLegales";
-import Confidentialite from "./Confidentialite";
-import CGV from "./CGV";
 import NotFound from "./NotFound";
 import Seo from "./Seo";
 import { SITE } from "./config/site";
 import { C } from "./theme";
 import { useCanvasColor } from "./useCanvasColor";
+
+const AboutPage = lazy(() => import("./AboutPage"));
+const ContactPage = lazy(() => import("./ContactPage"));
+const MentionsLegales = lazy(() => import("./MentionsLegales"));
+const Confidentialite = lazy(() => import("./Confidentialite"));
+const CGV = lazy(() => import("./CGV"));
+const TrainingPage = lazy(() => import("./TrainingPage"));
 
 // la navigation descend en même temps que la dernière phase du hero
 const NAV_DELAY = HERO_SCHEDULE.phase3;
@@ -88,18 +90,19 @@ export default function App() {
         <div className="min-h-screen" style={{ backgroundColor: C.surface }}>
 
           <SiteNav revealDelay={NAV_DELAY} />
-
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/formations/:slug" element={<Training />} />
-            <Route path="/mentions-legales" element={<MentionsLegales />} />
-            <Route path="/politique-de-confidentialite" element={<Confidentialite />} />
-            <Route path="/conditions-generales-de-vente" element={<CGV />} />
-            {/* filet : toute adresse inconnue arrive ici */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={null}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/formations/:slug" element={<Training />} />
+              <Route path="/mentions-legales" element={<MentionsLegales />} />
+              <Route path="/politique-de-confidentialite" element={<Confidentialite />} />
+              <Route path="/conditions-generales-de-vente" element={<CGV />} />
+              {/* filet : toute adresse inconnue arrive ici */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
 
           <Footer />
         </div>

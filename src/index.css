@@ -12,8 +12,8 @@ body { background-color: transparent; overscroll-behavior-y: none; }
 }
 
 @font-face {
-  font-family: "Newsreader";
-  src: url("/fonts/newsreader.woff2") format("woff2-variations");
+  font-family: "PlayfairDisplay";
+  src: url("/fonts/PlayfairDisplay.woff2") format("woff2-variations");
   font-weight: 200 800;
   font-style: normal;
   font-display: swap;

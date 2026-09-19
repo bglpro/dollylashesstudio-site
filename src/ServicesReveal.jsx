@@ -67,6 +67,11 @@ export default function ServicesReveal({
       typeof window.matchMedia === "function" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+    let bandHeight = 0;
+    const measure = () => {
+    bandHeight = bandRefs.current[1] ? bandRefs.current[1].offsetHeight : 0;
+    };
+
     const apply = () => {
       const viewportHeight = window.innerHeight;
       const text = textRef.current;
@@ -97,9 +102,7 @@ export default function ServicesReveal({
       });
 
       if (text) {
-        const bandHeight = bandRefs.current[1]
-          ? bandRefs.current[1].offsetHeight
-          : 0;
+        
         const frame = computeParagraph(
           sectionTop,
           viewportHeight,
@@ -124,6 +127,7 @@ export default function ServicesReveal({
       });
     };
 
+    measure();
     apply();
 
     if (!warned.current) {
@@ -141,11 +145,17 @@ export default function ServicesReveal({
       }
     }
 
+        // au redimensionnement seulement : on remesure, puis on replace
+    const onResize = () => {
+      measure();
+      onScroll();
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    window.addEventListener("resize", onResize);
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("resize", onResize);
     };
   }, [gap]);
 
@@ -195,7 +205,7 @@ export default function ServicesReveal({
           style={{
             color: C.edge,
             fontFamily: FONT.read,
-            fontWeight: 300,
+            fontWeight: 200,
             top: "60%",
             transform: "translate3d(0, 100vh, 0)",
             willChange: "transform",

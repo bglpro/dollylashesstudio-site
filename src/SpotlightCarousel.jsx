@@ -415,7 +415,7 @@ export default function SpotlightCarousel({
                     playsInline
                     loop
                     muted
-                    preload={Math.abs(offset) <= 1 ? "auto" : "none"}
+                    preload="none"
                     aria-label={slide.caption}
                     className="absolute inset-0 h-full w-full object-cover object-bottom"
                   />

@@ -70,7 +70,7 @@ export const RADIUS = {
 /* ------------------------------------------------------------------ */
 export const FONT = {
   display: '"Melodrama", "Playfair Display", Georgia, serif',
-  read: '"Newsreader", Georgia, "Times New Roman", serif',
+  read: '"PlayfairDisplay", Georgia, "Times New Roman", serif',
 };
 
 

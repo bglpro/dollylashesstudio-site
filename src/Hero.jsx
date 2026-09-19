@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { C, EASE } from "./theme";
 import { LOGO_BLANC, LOGO_ROUGE } from "./brandLogo";
-import { STUDIO_IMAGES } from "./assets/images";
 import { HERO_SCHEDULE } from "./heroTiming";
 import AnimatedHeading, { HEADING_CSS } from "./AnimatedHeading";
 import HeroCard from "./HeroCard";
 import { SITE } from "./config/site";
 
+import carte800 from "./assets/carte-fidelite-800.webp";
+import carte1600 from "./assets/carte-fidelite-1600.webp";
+
 /* ------------------------------------------------------------------ */
 /* Contenu par défaut                                                  */
 /* ------------------------------------------------------------------ */
-
-const FIDELITE = STUDIO_IMAGES.find((image) => image.id === "fidelite");
 
 /** Le titre, découpé pour que la partie en gras reste modifiable. */
 const DEFAULT_PARTS = [
@@ -23,11 +23,6 @@ const DEFAULT_PARTS = [
 const DEFAULT_CTA = { label: "Réserver une prestation", href: SITE.booking };
 
 const DEFAULT_SINCE = "Depuis 2019";
-
-const DEFAULT_MAIN = {
-  src: FIDELITE?.src,
-  alt: FIDELITE?.alt || "Carte de fidélité DollyLashesStudio",
-};
 
 /* ------------------------------------------------------------------ */
 /* Feuille de style de la scène                                        */
@@ -139,7 +134,7 @@ const HERO_CSS = `
 .hero-since {
   margin: 0;
   color: #fff;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-family: var(--hero-font, "Playfair Display"), Georgia, serif;
   font-weight: 400;
   text-shadow: 0 2px 24px rgba(15, 13, 12, 0.35);
 }
@@ -375,7 +370,6 @@ export default function Hero({
   // comptés depuis le haut de l'écran. Un nombre, ou une fonction si la
   // valeur dépend de l'écran. Par défaut : juste sous l'en-tête collant.
   nextOffset = navOffset,
-  main = DEFAULT_MAIN,
   // undefined = carte par défaut, un objet pour la régler, null pour la retirer
   card,
 }) {
@@ -442,7 +436,7 @@ export default function Hero({
         // le hero se glisse SOUS l'en-tête : marge négative de sa hauteur,
         // et on ne retranche plus que la bannière. L'image passe donc
         // derrière la navigation au lieu de commencer en dessous.
-        height: "calc(100lvh - var(--banner-height, 0px))",
+        height: "calc(100dvh - var(--banner-height, 0px))",
         marginTop: "calc(-1 * var(--nav-height, 0px))",
         minHeight: 540,
         backgroundColor: C.surface,
@@ -454,10 +448,12 @@ export default function Hero({
       <div className="hero-main">
         <img
           className="hero-main-media h-full w-full object-cover"
-          src={main.src || main.poster}
-          alt={main.alt}
-          // plus grande image de la page une fois déployée : elle ne doit pas
-          // être différée, c'est elle qui fixe le temps d'affichage perçu
+          width="800" 
+          height="1600"
+          src={carte1600}
+          srcSet={`${carte800} 800w, ${carte1600} 1600w`}
+          sizes="100vw"
+          alt="Carte de fidélité Dolly Lashes Studio tenue par une main gantée en cabine"
           fetchPriority="high"
           decoding="async"
         />

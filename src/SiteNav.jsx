@@ -829,6 +829,8 @@ export default function SiteNav({
                 <img
                   src={overlay && overlayLogo ? overlayLogo : logo}
                   alt={brand}
+                  width="240"
+                  height="40"
                   className="w-auto"
                   style={{ height: logoHeight }}
                 />

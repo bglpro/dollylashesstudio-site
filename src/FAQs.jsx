@@ -228,7 +228,7 @@ function AccordionItem({ item, isOpen, onToggle, headingLevel = "h3", inView = t
       >
         <div className="overflow-hidden">
           <div className="pb-4 pr-6">
-            <BlurredStagger key={isOpen ? "open" : "closed"} text={item.answer} />
+            {isOpen ? <BlurredStagger text={item.answer} /> : null}
           </div>
         </div>
       </div>
